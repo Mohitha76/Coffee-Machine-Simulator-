@@ -1,0 +1,78 @@
+print('----------_____🤖 WELCOME 🤖____----------   ')
+menu = {
+    "coffee": {
+        "ingredients": {"water": 200, "milk": 100, "coffee_powder": 20},
+        "cost": 30
+    },
+    "tea": {
+        "ingredients": {"water": 150, "milk": 100, "tea_powder": 15},
+        "cost": 20
+    },
+    "juice": {
+        "ingredients": {"water": 250, "juice_syrup": 50},
+        "cost": 25
+    }
+}
+boool=True
+money = 0
+change = 0
+while(boool!=False):
+    choice = input("-------LIST OF AVAILABLE DRINKS-------\n1.COFFEE ☕ \n2.TEA 🍵\n3.JUICE 🍹\n -----AND-----\n 4.OFF 😴\n 5.REPORT 📰\nWhat would you like : ")
+    choice=choice.lower()
+    if (choice=="off"):
+        print("Machine is Turning OFFFFFFF..........😴\nThank you! Visit again😊")
+        print("------------------------------\n")
+        boool=False
+    elif (choice=='report'):
+        print("--------MACHINE REPORT 📰--------")
+        for item in menu:
+            print(item,"costs",menu[item]['cost'],'/-')
+        print("------------------------------\n")
+    elif (choice=='coffee' or choice=='tea' or choice=='juice' ):
+        money = int(input("Please Insert Money (/-) : "))
+        if(choice=='coffee'):
+            if(money<menu[choice]['cost']):
+                print('!!!Sorry not enough money!!!')
+                print("Money is refunded!!!")
+                print("------------------------------\n")
+            else:
+                if(money>menu[choice]['cost']):
+                    change = money - menu[choice]['cost']
+                    print("Here is your coffee ☕...")
+                    print("your remain change ",change,'/- has been credited to your account...')
+                    print("------------------------------\n")
+                else:
+                    print("Here is your coffee ☕...")
+                    print("------------------------------\n")
+        elif(choice=='tea'):
+            if(money<menu[choice]['cost']):
+                print('!!!Sorry not enough money!!!')
+                print("Money is refunded!!!")
+                print("------------------------------\n")
+            else:
+                if(money>menu[choice]['cost']):
+                    change = money - menu[choice]['cost']
+                    print("Here is your tea  🍵...")
+                    print("your remain change ",change,'/- has been credited to your account...')
+                    print("------------------------------\n")
+                else:
+                    print("Here is your tea  🍵...")
+                    print("------------------------------\n")
+        else:
+            if(money<menu[choice]['cost']):
+                print('!!!Sorry not enough money!!!')
+                print("Money is refunded!!!")
+                print("------------------------------\n")
+            else:
+                if(money>menu[choice]['cost']):
+                    change = money - menu[choice]['cost']
+                    print("Here is your juice 🍹....")
+                    print("your remain change ",change,'/- has been credited to your account...')
+                    print("------------------------------\n")
+                else:
+                    print("Here is your juice 🍹....")
+                    print("------------------------------\n")
+    else:
+        print("Please enter correct drink!!!!")
+        print("------------------------------\n")
+        
